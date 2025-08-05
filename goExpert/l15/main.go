@@ -14,4 +14,9 @@ func main() {
 	b := &a
 
 	println(*b)
+
+	c := &b
+	println(c)     // address of b
+	println(*c)    // adress of a
+	println(*(*c)) // value of a
 }
