@@ -20,10 +20,10 @@ func main_() {
 
 	// T3
 	go task("Task 2") // New Thread
-	
+
 	// T1
 	task("Task 3")
-	// If you put go in the front of the above line the function will be putted on another thread and the main thread program 
+	// If you put go in the front of the above line the function will be putted on another thread and the main thread program
 	// will not have anything to run and then will stop execution
 }
 
@@ -35,9 +35,9 @@ func main() {
 
 	// T3
 	go task("Task 2") // New Thread
-	
+
 	// T1
 	task("Task 3")
-	// If you put go in the front of the above line the function will be putted on another thread and the main thread program 
+	// If you put go in the front of the above line the function will be putted on another thread and the main thread program
 	// will not have anything to run and then will stop execution
 }

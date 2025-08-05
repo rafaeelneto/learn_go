@@ -3,20 +3,21 @@ package main
 import (
 	"fmt"
 )
+
 type set []int
 
 func maxSubArray(arr set) int {
-	
+
 	sumList := map[*int]set{}
 
 	subArrays := subsets(arr)
 
 	//! i := 0
 	i := subArrays[0][0]
-	max:=&i
+	max := &i
 	// split subsets
 	for _, s := range subArrays {
-		sum:=s.sum()
+		sum := s.sum()
 		fmt.Println(sum)
 		sumList[&sum] = s
 		if sum > *max {
@@ -25,7 +26,7 @@ func maxSubArray(arr set) int {
 		}
 	}
 
-	fmt.Println("max subset", sumList[max], "sum",*max)
+	fmt.Println("max subset", sumList[max], "sum", *max)
 
 	return *max
 }
@@ -56,14 +57,12 @@ func (s set) sum() int {
 	return sum
 }
 
-
 func main() {
 
-	// fmt.Println(maxSubArray([]int{5,4,-1,7,8}) == 23) // expect 23
-	// fmt.Println(maxSubArray([]int{-2,1,-3,4,-1,2,1,-5,4}) == 6) // expect 6
-	// fmt.Println(maxSubArray([]int{-2,-1,-3}) == -1) // expect -1
-	// fmt.Println(maxSubArray([]int{3, -2, -3, -3, 1, 3, 0}) == 4) // expect 4
-	// fmt.Println(maxSubArray([]int{})) // expect 4
+	fmt.Println(maxSubArray([]int{5, 4, -1, 7, 8}) == 23)               // expect 23
+	fmt.Println(maxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}) == 6) // expect 6
+	fmt.Println(maxSubArray([]int{-2, -1, -3}) == -1)                   // expect -1
+	fmt.Println(maxSubArray([]int{3, -2, -3, -3, 1, 3, 0}) == 4)        // expect 4
+	fmt.Println(maxSubArray([]int{}))                                   // expect 4
 
-	
 }
