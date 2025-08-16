@@ -18,6 +18,7 @@ func main() {
 	mux.HandleFunc("/subpath", subpathHandle)
 	mux.Handle("/blog", blog{content: "aaaaa"})
 
+	// ListerAndServe is a blocking function
 	go http.ListenAndServe(":8080", mux)
 
 	muxSecond := http.NewServeMux()
