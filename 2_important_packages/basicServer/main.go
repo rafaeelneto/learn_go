@@ -43,6 +43,7 @@ func GetCEPHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-type", "application/json")
 	json.NewEncoder(w).Encode(addr)
 
